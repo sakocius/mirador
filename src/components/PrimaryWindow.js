@@ -7,6 +7,7 @@ import ns from '../config/css-ns';
 
 const GalleryView = lazy(() => import('../containers/GalleryView'));
 const WindowViewer = lazy(() => import('../containers/WindowViewer'));
+const AVViewer = lazy(() => import('../containers/AVViewer'));
 
 GalleryView.displayName = 'GalleryView';
 WindowViewer.displayName = 'WindowViewer';
@@ -27,6 +28,13 @@ export class PrimaryWindow extends Component {
       if (view === 'gallery') {
         return (
           <GalleryView
+            windowId={windowId}
+          />
+        );
+      }
+      if (view === 'av') {
+        return (
+          <AVViewer
             windowId={windowId}
           />
         );
